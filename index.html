@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha384-vYwh3B8vFF+4CXIa4lPPSrbUHflApCpv5s9LkPTqnTa7CNoBPltvFonES1RDtRg1"
+      crossorigin="anonymous"
+    />
+    <style>
+      ::-webkit-scrollbar {
+        width: 5px; /* Width of the scrollbar */
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Color of the scrollbar track */
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888; /* Color of the scrollbar handle */
+      }
+    </style>
+  </head>
+
+  <body class="bg-white">
+    <div class="mx-auto bg-white">
+      <div class="bar bg-white w-full fixed top-0 z-10">
+        <div class="upper_bar flex w-full gap-4 items-center">
+          <div class="logo_portion mx-6 flex gap-5">
+            <span class="material-symbols-outlined mt-5 cursor-pointer">
+              menu
+            </span>
+            <div class="logo flex">
+              <img
+                src="logo_yt.jpg"
+                class="w-32 h-[70px] cursor-pointer"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            class="search w-[45%] flex items-center border-[1px] border-gray-400 ml-40 rounded-full"
+          >
+            <div class="pl-3 w-full py-[6px]">
+              <input
+                type="text"
+                class="w-full outline-none text-md"
+                placeholder="Search"
+              />
+            </div>
+            <div
+              class="search-icon px-5 py-[6px] bg-gray-50 border-l-[1px] hover:bg-gray-100 border-l-gray-400 rounded-tr-full rounded-br-full cursor-pointer"
+            >
+              <span class="material-symbols-outlined text-gray-600 text-3xl">
+                search</span
+              >
+            </div>
+          </div>
+          <div
+            class="audio border p-2 rounded-full bg-gray-100 cursor-pointer hover:bg-gray-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              focusable="false"
+              style="
+                pointer-events: none;
+                display: block;
+                width: 100%;
+                height: 100%;
+              "
+            >
+              <path
+                d="M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 1.7 1.34 3.07 3 3.07s3-1.37 3-3.07V6.07C15 4.37 13.66 3 12 3zm6.5 9h-1c0 3.03-2.47 5.5-5.5 5.5S6.5 15.03 6.5 12h-1c0 3.24 2.39 5.93 5.5 6.41V21h2v-2.59c3.11-.48 5.5-3.17 5.5-6.41z"
+              ></path>
+            </svg>
+          </div>
+          <div class="sidebar ml-48 w-[10%] myborder flex gap-4">
+            <div
+              class="video p-2 hover:bg-gray-100 rounded-full cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                style="
+                  pointer-events: none;
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                "
+                viewBox="0 0 24 24"
+                width="24"
+                focusable="false"
+              >
+                <path
+                  d="M14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2zm3-7H3v12h14v-6.39l4 1.83V8.56l-4 1.83V6m1-1v3.83L22 7v8l-4-1.83V19H2V5h16z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="notification hover:bg-gray-100 rounded-full p-2 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                enable-background="new 0 0 24 24"
+                height="24"
+                viewBox="0 0 24 24"
+                width="24"
+                focusable="false"
+                style="
+                  pointer-events: none;
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                "
+              >
+                <path
+                  d="M10 20h4c0 1.1-.9 2-2 2s-2-.9-2-2zm10-2.65V19H4v-1.65l2-1.88v-5.15C6 7.4 7.56 5.1 10 4.34v-.38c0-1.42 1.49-2.5 2.99-1.76.65.32 1.01 1.03 1.01 1.76v.39c2.44.75 4 3.06 4 5.98v5.15l2 1.87zm-1 .42-2-1.88v-5.47c0-2.47-1.19-4.36-3.13-5.1-1.26-.53-2.64-.5-3.84.03C8.15 6.11 7 7.99 7 10.42v5.47l-2 1.88V18h14v-.23z"
+                ></path>
+              </svg>
+            </div>
+            <div class="id cursor-pointer">
+              <img
+                id="img"
+                draggable="false"
+                class="style-scope yt-img-shadow rounded-full"
+                alt="Avatar image"
+                height="32"
+                width="32"
+                src="https://yt3.ggpht.com/4QOk074IFvnp9klizuzaVVRctlPBZaND4GlTH4bt8K75twSTgpRn2wJQAdqwEMFHLud65WVz8tk=s88-c-k-c0x00ffffff-no-rj"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="lower_bar py-2 w-full flex gap-3 absolute left-[20%] font-sans bg-white"
+        >
+          <div
+            class="px-4 py-2 w-fit text-gray-100 bg-gray-900 rounded-lg cursor-pointer"
+          >
+            All
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Mixes
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Computer Science
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Web development
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Anime
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Music
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            News
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Podcast
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Debates
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Wickets
+          </div>
+          <div
+            class="px-4 py-2 w-fit bg-gray-100 text-black rounded-lg cursor-pointer hover:bg-gray-900 hover:text-gray-100 transition-all duration-200"
+          >
+            Hunter
+          </div>
+          <div class="px-1 mt-2 w-fit rounded-full cursor-pointer">
+            <span class="material-symbols-outlined text-3xl">
+              navigate_next
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="homebar flex w-[19%] h-screen overflow-y-auto fixed top-16 pb-2 bg-white font-sans"
+      >
+        <div class="flex flex-col w-full mt-2">
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> home </span>
+            <span class="mx-6">Home</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> slow_motion_video </span>
+            <span class="mx-6">Shorts</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> subscriptions </span>
+            <span class="mx-6">Subscriptions</span>
+          </div>
+          <span class="bottom_line h-[1.5px] bg-gray-200 mx-2 w-[95%]"></span>
+          <h1
+            class="home flex w-[90%] py-2 px-2 mx-3 mt-1 font-semibold text-xl cursor-pointer border-[1.5px] border-x-0 border-y-0 hover:bg-gray-100 border-t border-gray-300 rounded-lg"
+          >
+            You
+            <span
+              class="material-symbols-outlined text-3xl font-bold mt-1 mx-2"
+            >
+              navigate_next
+            </span>
+          </h1>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> account_box </span>
+            <span class="mx-6 text-md">Your channel</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> history </span>
+            <span class="mx-6 text-md">History</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> smart_display </span>
+            <span class="mx-6 text-md">Your videos</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> pace </span>
+            <span class="mx-6 text-md">Watch Later</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> expand_more </span>
+            <span class="mx-6 text-md">Show more</span>
+          </div>
+          <div class="bottom_line h-[2px] bg-gray-200 mx-2 w-[95%] mt-2"></div>
+
+          <h1
+            class="home flex w-[90%] py-2 px-2 mx-3 font-semibold text-xl cursor-pointer border-[1.5px] border-x-0 border-y-0 border-t border-gray-300"
+          >
+            Subscriptions
+          </h1>
+          <div
+            class="home flex w-[90%] py-1 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer items-center gap-9"
+          >
+            <img
+              id="img"
+              draggable="false"
+              class="style-scope yt-img-shadow rounded-full"
+              alt=""
+              width="38"
+              src="https://yt3.ggpht.com/82loxhUgwCxoSZF7eZklC2YViLGv6Znd262QID4M99P_jK0K8vd3ennV9p5wuwQuc1Nj4OnHSw=s68-c-k-c0x00ffffff-no-rj-mo"
+            />
+            <span class="pb-2"
+              >Syed Muzammil ...<span class="text-4xl mx-2 text-blue-500"
+                >.</span
+              ></span
+            >
+          </div>
+
+          <div
+            class="home flex w-[90%] py-2 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer items-center gap-9"
+          >
+            <img
+              id="img"
+              draggable="false"
+              class="style-scope yt-img-shadow rounded-full"
+              alt=""
+              width="38"
+              src="https://yt3.googleusercontent.com/ytc/AIf8zZTDkajQxPa4sjDOW-c3er1szXkSAO-H9TiF4-8u_Q=s68-c-k-c0x00ffffff-no-rj-mo"
+            />
+            <span class="pb-2">freeCodeCamp.org</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-2 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer items-center gap-9"
+          >
+            <img
+              id="img"
+              draggable="false"
+              class="style-scope yt-img-shadow rounded-full"
+              alt=""
+              height="38"
+              width="38"
+              src="//yt3.ggpht.com/EpXMZ_jtJ1F-HLqPJqvv8GzumeFf9MNB-U3juQv9TEaL5RdK7LoHQ3Z0nmYSjhkARTLK3D8O4AA=s176-c-k-c0x00ffffff-no-rj-mo"
+            />
+            <span class="pb-2">The Pakistan Exp...</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-2 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer items-center gap-9"
+          >
+            <img
+              id="img"
+              draggable="false"
+              class="style-scope yt-img-shadow rounded-full"
+              alt=""
+              width="38"
+              src="https://yt3.ggpht.com/2Nnzkd3esAw-fy89E7NFjFMlWDfenMBIq_49uvXpBQRcILNe5-0xykD-UkxJ5L3eqGpswKw2=s68-c-k-c0x00ffffff-no-rj"
+            />
+            <span class="pb-2">Book Buddy</span>
+          </div>
+          <div
+            class="bottom_line h-[1.5px] bg-gray-200 mx-2 w-[95%] mt-2"
+          ></div>
+
+          <h1
+            class="home flex w-[90%] py-2 px-2 mx-3 font-semibold text-xl cursor-pointer border-[1.5px] border-x-0 border-y-0 border-t border-gray-300"
+          >
+            Explore
+          </h1>
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined">
+              local_fire_department
+            </span>
+            <span class="mx-6 text-md">Trending</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> music_note </span>
+            <span class="mx-6 text-md">Music</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> stadia_controller </span>
+            <span class="mx-6 text-md">Gaming</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> newsmode </span>
+            <span class="mx-6 text-md">News</span>
+          </div>
+
+          <div
+            class="home flex w-[90%] py-3 px-2 rounded-xl mx-3 hover:bg-gray-100 cursor-pointer"
+          >
+            <span class="material-symbols-outlined"> trophy </span>
+            <span class="mx-6 text-md">Sports</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero w-[79.8%] absolute h-screen mr-2 top-32 my-0 left-[20%]">
+        <div class="main flex gap-2 flex-wrap">
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video1.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video2.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video3.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video4.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video5.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video6.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="show h-8 w-full my-4 flex items-center">
+            <div class="line h-[1px] w-[30%] bg-gray-200 ml-4"></div>
+            <div
+              class="px-36 py-[6px] border-[1px] border-gray-300 rounded-full text-gray-700 font-semibold flex hover:bg-gray-50 cursor-pointer"
+            > 
+              Show more
+              <span class="material-symbols-outlined"> expand_more </span>
+            </div>
+            <div class="line h-[1px] w-[30%] bg-gray-200"></div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video7.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video8.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video9.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video10.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video11.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+          <div class="item my-2 py-2 pr-0 w-[32%] cursor-pointer">
+            <img
+              src="video_pics/video12.jpg"
+              alt=""
+              class="rounded-xl h-52 w-[23.5rem]"
+            />
+            <div class="info my-3 w-[85%]">
+              <div class="flex gap-x-3">
+                <img
+                  id="img"
+                  draggable="false"
+                  class="style-scope yt-img-shadow rounded-full h-10 w-10"
+                  alt=""
+                  src="https://yt3.ggpht.com/vGZSk2jFwSR517E_PkmN-WR55UeJgQkpU6VaFjlUIvzmeverYCpHXtM_2W6Vb0ZVcAEcymTUyg=s68-c-k-c0x00ffffff-no-rj"
+                />
+                <div class="font-sans text-md">
+                  The Biggest Lassi Brand of #Lahore | Jeda | BTS Ep.6
+                </div>
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                Ali E.
+              </div>
+              <div class="text-gray-600 text-sm ml-[3.2rem] mt-0 pt-0">
+                70K views
+                <span class="text-gray-700 text-md mx-1 font-extrabold">.</span
+                >3 weeks ago
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
